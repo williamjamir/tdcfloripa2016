@@ -50,7 +50,7 @@ def extractCandidates(img):
 			candidates.append(orderPointsCW(approx))
 
 	#Remove similar candidates
-	for idx1, idx2 in itertools.combinations(range(0,len(candidates)), 2):
+	for idx1, idx2 in itertools.combinations(range(len(candidates)), 2):
 		try:
 			diff = np.mean(np.absolute(candidates[idx1]-candidates[idx2]))
 			if diff < 20:
